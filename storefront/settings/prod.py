@@ -7,7 +7,7 @@ DEBUG = False
 SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = ['web-production-842d5.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://web-production-842d5.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['web-production-842d5.up.railway.app']
 
 
 
