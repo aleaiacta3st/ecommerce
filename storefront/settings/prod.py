@@ -6,7 +6,7 @@ DEBUG = False
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = ['web-production-842d5.up.railway.app', 'eagle-prod-3d3678edc07d.herokuapp.com']
+ALLOWED_HOSTS = [ 'web-production-842d5.up.railway.app']
 
 
 DATABASES = {
