@@ -4,33 +4,11 @@ from .common import *
 
 DEBUG = False
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY', 'temporary-key-for-debug')
 
-ALLOWED_HOSTS = ['web-production-842d5.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['web-production-842d5.up.railway.app']
-
-
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-842d5.up.railway.app']
 
 DATABASES = {
     'default': dj_database_url.config()
 }
-
-REDISCLOUD_URL = os.environ['REDISCLOUD_URL']
-
-CELERY_BROKER_URL = REDISCLOUD_URL
-
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": REDISCLOUD_URL,
-        'TIMEOUT': 10 * 60,
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
-    }
-}
-
-EMAIL_HOST = os.environ['MAILGUN_SMTP_SERVER']
-EMAIL_HOST_USER = os.environ['MAILGUN_SMTP_LOGIN']
-EMAIL_HOST_PASSWORD = os.environ['MAILGUN_API_KEY']
-EMAIL_PORT = os.environ['MAILGUN_SMTP_PORT']
