@@ -3,4 +3,4 @@ builder = "dockerfile"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "gunicorn storefront.wsgi:application --bind 0.0.0.0:8000"
+startCommand = "gunicorn storefront.wsgi:application --bind 0.0.0.0:$PORT"
