@@ -1,0 +1,10 @@
+*.pyc 
+/media/
+/static/
+general.log 
+
+# Junk files
+*.Zone.Identifier
+.DS_Store
+celerybeat-schedule
+*.log
